@@ -1,0 +1,84 @@
+AnalysisType: rule
+Filename: ipinfo_test.py
+RuleID: "IPINFO_TEST"
+DisplayName: "IPINFO_TEST"
+Enabled: false
+LogTypes:
+  - Cloudflare.HttpRequest
+Severity: Info
+DedupPeriodMinutes: 60
+Threshold: 1
+InlineFilters:
+  - All:
+      - All: []
+Tests:
+  - Name: Test-d4e5ce
+    ExpectedResult: true
+    Log:
+      ClientIP: 52.178.185.185
+      ClientRequestHost: wearecws.com
+      ClientRequestMethod: GET
+      ClientRequestURI: /
+      EdgeEndTimestamp: '2025-02-03 13:21:23.000000000'
+      EdgeResponseBytes: 16121
+      EdgeResponseStatus: 300
+      EdgeStartTimestamp: '2025-02-03 13:21:23.000000000'
+      RayID: 90c2b9495cb3eb04
+      _mocked_lookup_data_:
+        ipinfo_location:
+          52.178.185.185:
+            city: St. John's
+            region: NL
+        my_cool_lookup:
+          wearecws.com:
+            job: supervisor
+            name: Johnny Doe
+      p_any_domain_names:
+        - wearecws.com
+      p_any_ip_addresses:
+        - 52.178.185.185
+      p_any_trace_ids:
+        - 90c2b9495cb3eb04
+      p_enrichment:
+        ipinfo_asn:
+          ClientIP:
+            asn: AS8075
+            domain: microsoft.com
+            name: Microsoft Corporation
+            p_match: 52.178.185.185
+            route: 52.160.0.0/11
+            type: hosting
+        ipinfo_location:
+          ClientIP:
+            city: Dublin
+            country: IE
+            lat: '53.33306'
+            lng: '-6.24889'
+            p_match: 52.178.185.185
+            postal_code: D02
+            region: Leinster
+            region_code: L
+            timezone: Europe/Dublin
+        ipinfo_privacy:
+          ClientIP:
+            hosting: true
+            p_match: 52.178.185.185
+            proxy: false
+            relay: false
+            service: ''
+            tor: false
+            vpn: false
+      p_event_time: '2025-02-03 13:21:23.000000000'
+      p_log_type: Cloudflare.HttpRequest
+      p_parse_time: '2025-02-03 13:27:51.044879821'
+      p_row_id: 56cdf80c4410aac187c1adc624f106
+      p_schema_version: 0
+      p_source_id: 6c08951c-7582-4743-9606-d8d45376cc27
+      p_source_label: wearecws cloudflare
+      p_udm:
+        destination:
+          address: wearecws.com
+          domain: wearecws.com
+        source:
+          address: 52.178.185.185
+          ip: 52.178.185.185

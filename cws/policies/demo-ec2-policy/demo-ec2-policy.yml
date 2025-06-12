@@ -1,0 +1,265 @@
+AnalysisType: policy
+Filename: demo-ec2-policy.py
+PolicyID: "demo-ec2-policy"
+DisplayName: "demo-ec2-policy"
+Enabled: true
+ResourceTypes:
+  - AWS.EC2.Instance
+Severity: Critical
+Tests:
+  - Name: Compliant AZ
+    ExpectedResult: true
+    Resource:
+      AmiLaunchIndex: 0
+      Architecture: x86_64
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            AttachTime: "2024-10-10T10:54:42+00:00"
+            DeleteOnTermination: true
+            Status: attached
+            VolumeId: vol-0667fea6363355181
+      CapacityReservationSpecification:
+        CapacityReservationPreference: open
+      ClientToken: 8ccdcb3d-94cb-4b29-a726-14f23950f884
+      CpuOptions:
+        CoreCount: 1
+        ThreadsPerCore: 1
+      EbsOptimized: false
+      EnaSupport: true
+      EnclaveOptions:
+        BootMode: uefi-preferred
+        CapacityReservationSpecification:
+          CapacityReservationPreference: open
+        CpuOptions:
+          CoreCount: 1
+          ThreadsPerCore: 1
+        CurrentInstanceBootMode: legacy-bios
+        EnclaveOptions:
+          Enabled: false
+        HibernationOptions:
+          Configured: false
+        MaintenanceOptions:
+          AutoRecovery: default
+        MetadataOptions:
+          HttpEndpoint: enabled
+          HttpProtocolIpv6: disabled
+          HttpPutResponseHopLimit: 2
+          HttpTokens: required
+          InstanceMetadataTags: disabled
+          State: applied
+        PlatformDetails: Linux/UNIX
+        PrivateDnsNameOptions:
+          EnableResourceNameDnsAAAARecord: false
+          EnableResourceNameDnsARecord: true
+          HostnameType: ip-name
+        Tags:
+          - Key: Name
+            Value: panther-test
+        UsageOperation: RunInstances
+        UsageOperationUpdateTime: "2024-10-10T10:54:41+00:00"
+        VirtualizationType: hvm
+      HibernationOptions:
+        Configured: false
+      Hypervisor: xen
+      ImageId: ami-0d9c7bbbda4b78ffd
+      InstanceId: i-080b190e52a7decd9
+      InstanceType: t2.nano
+      LaunchTime: "2024-10-10T10:54:41+00:00"
+      MetadataOptions:
+        HttpEndpoint: enabled
+        HttpProtocolIpv6: disabled
+        HttpPutResponseHopLimit: 2
+        HttpTokens: required
+        InstanceMetadataTags: disabled
+        State: applied
+      Monitoring:
+        State: disabled
+      NetworkInterfaces:
+        - Association:
+            IpOwnerId: amazon
+            PublicDnsName: ec2-35-182-206-180.ca-central-1.compute.amazonaws.com
+            PublicIp: 35.182.206.180
+          Attachment:
+            AttachTime: "2024-10-10T10:54:41+00:00"
+            AttachmentId: eni-attach-07e268a1f2397e06d
+            DeleteOnTermination: true
+            DeviceIndex: 0
+            NetworkCardIndex: 0
+            Status: attached
+          Description: ""
+          Groups:
+            - GroupId: sg-0a7d80c1b99eb5587
+              GroupName: launch-wizard-1
+          InterfaceType: interface
+          Ipv6Addresses: []
+          MacAddress: 02:d1:c7:dc:52:fd
+          NetworkInterfaceId: eni-0ac41d5bc6e428cf6
+          OwnerId: "283242113286"
+          PrivateDnsName: ip-172-31-27-203.ca-central-1.compute.internal
+          PrivateIpAddress: 172.31.27.203
+          PrivateIpAddresses:
+            - Association:
+                IpOwnerId: amazon
+                PublicDnsName: ec2-35-182-206-180.ca-central-1.compute.amazonaws.com
+                PublicIp: 35.182.206.180
+              Primary: true
+              PrivateDnsName: ip-172-31-27-203.ca-central-1.compute.internal
+              PrivateIpAddress: 172.31.27.203
+          SourceDestCheck: true
+          Status: in-use
+          SubnetId: subnet-4d522425
+          VpcId: vpc-6403430c
+      Placement:
+        AvailabilityZone: us-east-1a
+        GroupName: ""
+        Tenancy: default
+      PrivateDnsName: ip-172-31-27-203.ca-central-1.compute.internal
+      PrivateIpAddress: 172.31.27.203
+      ProductCodes: []
+      PublicDnsName: ec2-35-182-206-180.ca-central-1.compute.amazonaws.com
+      PublicIpAddress: 35.182.206.180
+      RootDeviceName: /dev/xvda
+      RootDeviceType: ebs
+      SecurityGroups:
+        - GroupId: sg-0a7d80c1b99eb5587
+          GroupName: launch-wizard-1
+      SourceDestCheck: true
+      State:
+        Code: 16
+        Name: running
+      StateTransitionReason: ""
+      SubnetId: subnet-4d522425
+      Tags:
+        - Key: Name
+          Value: panther-test
+      VirtualizationType: hvm
+      VpcId: vpc-6403430c
+  - Name: Non-compliant AZ
+    ExpectedResult: false
+    Resource:
+      AmiLaunchIndex: 0
+      Architecture: x86_64
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            AttachTime: "2024-10-10T10:54:42+00:00"
+            DeleteOnTermination: true
+            Status: attached
+            VolumeId: vol-0667fea6363355181
+      CapacityReservationSpecification:
+        CapacityReservationPreference: open
+      ClientToken: 8ccdcb3d-94cb-4b29-a726-14f23950f884
+      CpuOptions:
+        CoreCount: 1
+        ThreadsPerCore: 1
+      EbsOptimized: false
+      EnaSupport: true
+      EnclaveOptions:
+        BootMode: uefi-preferred
+        CapacityReservationSpecification:
+          CapacityReservationPreference: open
+        CpuOptions:
+          CoreCount: 1
+          ThreadsPerCore: 1
+        CurrentInstanceBootMode: legacy-bios
+        EnclaveOptions:
+          Enabled: false
+        HibernationOptions:
+          Configured: false
+        MaintenanceOptions:
+          AutoRecovery: default
+        MetadataOptions:
+          HttpEndpoint: enabled
+          HttpProtocolIpv6: disabled
+          HttpPutResponseHopLimit: 2
+          HttpTokens: required
+          InstanceMetadataTags: disabled
+          State: applied
+        PlatformDetails: Linux/UNIX
+        PrivateDnsNameOptions:
+          EnableResourceNameDnsAAAARecord: false
+          EnableResourceNameDnsARecord: true
+          HostnameType: ip-name
+        Tags:
+          - Key: Name
+            Value: panther-test
+        UsageOperation: RunInstances
+        UsageOperationUpdateTime: "2024-10-10T10:54:41+00:00"
+        VirtualizationType: hvm
+      HibernationOptions:
+        Configured: false
+      Hypervisor: xen
+      ImageId: ami-0d9c7bbbda4b78ffd
+      InstanceId: i-080b190e52a7decd9
+      InstanceType: t2.nano
+      LaunchTime: "2024-10-10T10:54:41+00:00"
+      MetadataOptions:
+        HttpEndpoint: enabled
+        HttpProtocolIpv6: disabled
+        HttpPutResponseHopLimit: 2
+        HttpTokens: required
+        InstanceMetadataTags: disabled
+        State: applied
+      Monitoring:
+        State: disabled
+      NetworkInterfaces:
+        - Association:
+            IpOwnerId: amazon
+            PublicDnsName: ec2-35-182-206-180.ca-central-1.compute.amazonaws.com
+            PublicIp: 35.182.206.180
+          Attachment:
+            AttachTime: "2024-10-10T10:54:41+00:00"
+            AttachmentId: eni-attach-07e268a1f2397e06d
+            DeleteOnTermination: true
+            DeviceIndex: 0
+            NetworkCardIndex: 0
+            Status: attached
+          Description: ""
+          Groups:
+            - GroupId: sg-0a7d80c1b99eb5587
+              GroupName: launch-wizard-1
+          InterfaceType: interface
+          Ipv6Addresses: []
+          MacAddress: 02:d1:c7:dc:52:fd
+          NetworkInterfaceId: eni-0ac41d5bc6e428cf6
+          OwnerId: "283242113286"
+          PrivateDnsName: ip-172-31-27-203.ca-central-1.compute.internal
+          PrivateIpAddress: 172.31.27.203
+          PrivateIpAddresses:
+            - Association:
+                IpOwnerId: amazon
+                PublicDnsName: ec2-35-182-206-180.ca-central-1.compute.amazonaws.com
+                PublicIp: 35.182.206.180
+              Primary: true
+              PrivateDnsName: ip-172-31-27-203.ca-central-1.compute.internal
+              PrivateIpAddress: 172.31.27.203
+          SourceDestCheck: true
+          Status: in-use
+          SubnetId: subnet-4d522425
+          VpcId: vpc-6403430c
+      Placement:
+        AvailabilityZone: ca-central-1a
+        GroupName: ""
+        Tenancy: default
+      PrivateDnsName: ip-172-31-27-203.ca-central-1.compute.internal
+      PrivateIpAddress: 172.31.27.203
+      ProductCodes: []
+      PublicDnsName: ec2-35-182-206-180.ca-central-1.compute.amazonaws.com
+      PublicIpAddress: 35.182.206.180
+      RootDeviceName: /dev/xvda
+      RootDeviceType: ebs
+      SecurityGroups:
+        - GroupId: sg-0a7d80c1b99eb5587
+          GroupName: launch-wizard-1
+      SourceDestCheck: true
+      State:
+        Code: 16
+        Name: running
+      StateTransitionReason: ""
+      SubnetId: subnet-4d522425
+      Tags:
+        - Key: Name
+          Value: panther-test
+      VirtualizationType: hvm
+      VpcId: vpc-6403430c
